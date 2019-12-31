@@ -1,0 +1,19 @@
+{
+  "name": "Bootstrap_CSS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "live-server --open=./src --watch=./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "live-server": "^1.2.1",
+    "mathjax": "^2.7.7",
+    "popper.js": "^1.16.0"
+  }
+}

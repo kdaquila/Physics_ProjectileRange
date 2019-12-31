@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        #solution {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Projectile Motion</h1>
+    </div>
+    <div class="container">
+        <h3>Question:</h3>
+        <p>How far will a ball travel horizontally after being launched upward at an angle?</p>
+    </div>
+    <div class="container">
+        <h3>Inputs:</h3>
+        <form>
+            <div class="form-group form-row align-items-center">
+                <label class="col-8" for="initial-vertical-position">Initial Vertical Position (m)</label>
+                <input class="form-control col-4" type="text"  id="initial-vertical-position" aria-describedby="initial vertical position" placeholder="2">
+            </div>
+            <div class="form-group form-row align-items-center">
+                <label class="col-8" for="final-vertical-position">Final Vertical Position (m)</label>
+                <input class="form-control col-4" type="text"  id="final-vertical-position" aria-describedby="final-vertical-position" placeholder="0">
+            </div>
+            <div class="form-group form-row align-items-center">
+                <label class="col-8" for="initial-velocity-magnitude">Initial Velocity Magnitude (m/s)</label>
+                <input class="form-control col-4" type="text"  id="initial-velocity-magnitude" aria-describedby="initial-velocity-magnitude" placeholder="5">
+            </div>
+            <div class="form-group form-row align-items-center">
+                <label class="col-8" for="initial-velocity-direction">Initial Velocity Direction (\(^\circ\))</label>
+                <input class="form-control col-4" type="text"  id="initial-velocity-direction" aria-describedby="initial-velocity-direction" placeholder="45">
+            </div>
+            <div class="form-group form-row align-items-center">
+                <button class="btn btn-primary col-12 offset-sm-8 col-sm-4" type="button" onclick="handleSolve()">Solve</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h3>Results:</h3>
+        <div class="form-group form-row align-items-center">
+            <label class="col-8" for="horizontal-range">Horizontal Range (m)</label>
+            <input class="form-control col-4" readonly type="text"  id="horizontal-range" aria-describedby="horizontal range">
+        </div>
+    </div>
+    <div id="solution">
+        <div class="container">
+            <h3>Diagram:</h3>
+            <div class="row">
+                <figure class="col-12 col-sm-6 col-md-4" id="launchToHigher">
+                    <img class="figure-img img-fluid" src="./images/LaunchToHigher.png" alt="launch to higher">
+                    <figcaption class="figure-caption">Launch to a higher level</figcaption>
+                </figure>
+                <figure class="col-12 col-sm-6 col-md-4" id="launchToLower">
+                    <img class="img-fluid" src="./images/LaunchToLower.png" alt="launch to lower">
+                    <figcaption class="figure-caption">Launch to a lower level</figcaption>
+                </figure>
+                <figure class="col-12 col-sm-6 col-md-4" id="launchToSame">
+                    <img class="img-fluid" src="./images/LaunchToSame.png" alt="launch to same">
+                    <figcaption class="figure-caption">Launch to the same level</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="container">
+            <h3>Fun Facts:</h3>
+            <p>The ball will be in the air for <span id="totalTime">__</span> s.</p>
+            <p>The ball will reach a maximum height of <span id="maximumHeight">__</span> m above the ground.</p>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js" ></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js" ></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+</body>
+</html>
